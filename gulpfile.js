@@ -7,12 +7,6 @@ const htmlmin = require("gulp-htmlmin");
 const sass = require('gulp-sass')(require('sass'));
 
 
-jsMin = (cb)=>{
-    gulp.src("./src/scripts/*.scripts")
-        .pipe(uglify())
-        .pipe(gulp.dest("./dist/js/"));
-    cb();
-}
 
 cssMin = (cb)=>{
     gulp.src("./src/css/*.styles")
@@ -37,4 +31,4 @@ sassCom = (cb) => {
 }
 
 
-exports.default= series(jsMin, cssMin, htmlMin, sassCom);
+exports.default= series( cssMin, htmlMin, sassCom);
